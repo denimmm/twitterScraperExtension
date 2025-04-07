@@ -56,8 +56,9 @@ $(document).ready(function () {
     //listen for messages from the popup
     chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
         if (request.action === 'scrapeTweets') {
-            getTweets();
             sendResponse({ status: 'started' });
+            getTweets();
+
         }
     });
 
