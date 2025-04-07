@@ -2,32 +2,23 @@
   "manifest_version": 3,
   "name": "Twitter Scraper",
   "version": "1.0",
-  "description": "scrapes twitter cashtags",
+  "description": "Scrapes Twitter cashtags",
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "icom48.png"
+    "default_icon": "icon48.png"
   },
   "permissions": ["storage", "activeTab", "scripting"],
   "background": {
     "service_worker": "background.js"
   },
-
-  "icons" : {
-     "48": "icon48.png",
-     "128": "icon128.png"
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
   },
-
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
-      "js": ["content.js"]
-    }
-  ],
-  "web_accessible_resources": [
-    {
-      "resources": ["jquery.min.js"],
-      "matches": ["<all_urls>"]
+      "js": ["jquery-3.6.0.min.js", "content.js"]
     }
   ]
-
 }
